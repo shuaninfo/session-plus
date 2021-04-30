@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>主页</title>
+	</head>
+	<body>
+		<div>
+			<button id="setSession" type="button">设置sessionStorage</button>
+		</div>
+		<hr />
+		<div>
+			<button id="getSession" type="button">获取sessionStorage</button>
+		</div>
+		<hr />
+		<div>
+			<button id="removeSession" type="button">删除sessionStorage</button>
+		</div>
+	</body>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="module">
+		import {setItem, getItem, removeItem} from './index.js'
+		$('#setSession').click(function(){
+			console.log('设置')
+			setItem('key1', {
+				name: 'value'+Date.now()
+			})
+		})
+		
+		$('#getSession').click(function(){
+			let result = getItem('key1')
+			console.log('获取：', result)
+		})
+		
+		$('#removeSession').click(function(){
+			console.log('删除')
+			removeItem('key1')
+		})
+	</script>
+</html>

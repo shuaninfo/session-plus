@@ -1,2 +1,7 @@
-# sessionstorage-with-multiple-tab
-Synchronize sessionStorage across tabs
+# session plus
+```js
+|-
+    |- index.es.js // import export
+	|- index.js.js // window.sessionPlus
+```
+

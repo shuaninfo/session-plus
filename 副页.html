@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>副页</title>
+	</head>
+	<body>
+		<div>
+			<button id="initSession" type="button">初始化sessionStorage</button>
+		</div>
+		<hr />
+		<div>
+			<button id="setSession" type="button">设置sessionStorage</button>
+		</div>
+	</body>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="module">
+		import {setItem, getItem, removeItem} from './index.js'
+		$('#setSession').click(function(){
+			console.log('单击2')
+			setItem('key2', 'value2')
+		})
+		
+		$('#initSession').click(function(){
+			console.log('初始化')
+			initItems()
+		})
+	</script>
+</html>
