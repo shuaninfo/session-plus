@@ -1,5 +1,5 @@
 # session plus
-```js
+```javascript
 |-
     |- index.es.js // import export
 	|- index.js.js // window.sessionPlus
