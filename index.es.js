@@ -135,7 +135,9 @@ export const getItem = function(key, isBroadcast) {
 		_broadcast({
 			type: 'get',
 			key: key,
-			data: null
+			data: null,
+			// 防止连续两次相同的值时没有触发localstorage监听
+			mark: Date.now()+''+Math.random()
 		});
 	}
 	return result && result.data
@@ -167,7 +169,9 @@ export const setItem = function(key, value, isBroadcast) {
 		_broadcast({
 			type: 'set',
 			key: key,
-			data: value
+			data: value,
+			// 防止连续两次相同的值时没有触发localstorage监听
+			mark: Date.now()+''+Math.random()
 		});
 	}
 };
@@ -184,7 +188,9 @@ export const removeItem = function(key, isBroadcast) {
 		_broadcast({
 			type: 'remove',
 			key: key,
-			data: null
+			data: null,
+			// 防止连续两次相同的值时没有触发localstorage监听
+			mark: Date.now()+''+Math.random()
 		});
 	}
 }
@@ -195,7 +201,9 @@ export const initItems = function(){
 		type: 'init',
 		key: INIT_CHANNEL_NAME,
 		data: null,
-		url: CURRENT_TAB_URL
+		url: CURRENT_TAB_URL,
+		// 防止连续两次相同的值时没有触发localstorage监听
+		mark: Date.now()+''+Math.random()
 	});
 }
 
